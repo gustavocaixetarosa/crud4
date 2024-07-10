@@ -1,0 +1,18 @@
+<form class="form-container" [formGroup]="form">
+  <label for="nomeDoProduto">Nome do produto</label>
+  <input class="input" id="nomeDoProduto" type="text" formControlName="nome">
+
+  <label for="quantidade">Quantidade </label>
+  <input class="input" id="quantidade" type="text" formControlName="quantidade">
+
+  <label for="preco">Preco</label>
+  <input class="input" id="preco" type="text" formControlName="preco">
+
+  <button type="submit" (click)="adicionarItem()">Adicionar Item a lista</button>
+</form>
+
+<ul>
+  @for (produto of listaProdutos; track produto.nome) {
+    <li>{{ produto.nome }} -- {{ produto.quantidade }} --  {{ produto.preco }}</li>
+  }
+</ul>
